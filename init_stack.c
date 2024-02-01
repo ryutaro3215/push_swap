@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   make_stack.c                                       :+:      :+:    :+:   */
+/*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 20:33:24 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/01/31 10:39:19 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/01/31 16:02:38 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,23 @@ int	get_index(char **arg_list, char *arg_num)
 	return (index);
 }
 
-int	make_stack_a(t_stacks *stacks, char **arg_list)
+int	init_stack(t_stacks *stacks, char **arg_list)
 {
 	int	count;
 
 	count = stacks->arg_count - 1;
+	stacks->stack_a_count = stacks->arg_count;
+	stacks->stack_b_count = 0;
 	if (!(stacks->stack_a = (t_node *)malloc(sizeof(t_node))))
 		return (0);
 	stacks->stack_a->index = -1;
 	stacks->stack_a->next = stacks->stack_a;
 	stacks->stack_a->prev = stacks->stack_a;
+	if (!(stacks->stack_b = (t_node *)malloc(sizeof(t_node))))
+		return (0);
+	stacks->stack_b->index = -1;
+	stacks->stack_b->next = stacks->stack_b;
+	stacks->stack_b->prev = stacks->stack_b;
 	while (arg_list[count] != NULL)
 	{
 		if (!push_stack(stacks, get_index(arg_list,  arg_list[count])))

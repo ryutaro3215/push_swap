@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 10:51:49 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/01/30 22:24:57 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/01/31 15:41:47 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	check_arg(t_stacks *stacks, int argc, char **argv)
 	if (!is_number(arg_list) || !is_duplicate(arg_list))
 		return (arg_free(arg_list, stacks, 0));
 	stacks->collect_arg = 1;
-	if (!make_stack_a(stacks, arg_list))
+	if (!init_stack(stacks, arg_list))
 		return (arg_free(arg_list, stacks, 0));
 	return(arg_free(arg_list, stacks, 1));
 }

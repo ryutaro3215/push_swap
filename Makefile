@@ -1,5 +1,6 @@
 NAME = push_swap
-MSRC = push_swap.c check.c int_check.c finish.c init_stack.c swap.c rotate.c r_rotate.c push.c
+MSRC = push_swap.c check.c int_check.c finish.c init_stack.c swap.c rotate.c r_rotate.c push.c \
+sort.c sort_two.c keep.c sort_three.c
 OBJS = $(MSRC:.c=.o)
 LIB_DIR = libft
 LIB = ft

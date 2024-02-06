@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 10:51:49 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/01/31 15:41:47 by ryutaro3205      ###   ########.fr       */
+/*   Created: 2024/02/05 22:51:01 by ryutaro3205       #+#    #+#             */
+/*   Updated: 2024/02/06 00:52:00 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ int	check_arg(t_stacks *stacks, int argc, char **argv)
 {
 	char **arg_list;
 
-	if (!(arg_list = make_arg_list(stacks, argc, argv)))
+	arg_list = make_arg_list(stacks, argc, argv);
+	if (!arg_list)
 		return (0);
 	if (!is_number(arg_list) || !is_duplicate(arg_list))
 		return (arg_free(arg_list, stacks, 0));

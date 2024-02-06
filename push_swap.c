@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:52:33 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/01 11:26:47 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/06 00:45:53 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,36 +20,22 @@ static void destructor() {
 void print_stack_b(t_stacks *stacks) {
     t_node *current = stacks->stack_b;
     while (current->index != -1) {
-        ft_printf("%d\n", current->index);
+        ft_printf("index: %d\n", current->index);
+		ft_printf("number: %d\n", current->number);
+		ft_printf("\n");
         current = current->next;
     }
 }
 
-void free_stack_b(t_stacks *stacks) {
-    t_node *current = stacks->stack_b;
-    while (current->index != -1) {
-        current = current->next;
-		free(current->prev);
-    }
-	free(current);
-}
 void print_stack_a(t_stacks *stacks)
 {
     t_node *current = stacks->stack_a;
     while (current->index != -1) {
-        ft_printf("%d\n", current->index);
+        ft_printf("index: %d\n", current->index);
+		ft_printf("number: %d\n", current->number);
+		ft_printf("\n");
         current = current->next;
     }
-}
-
-void free_stack_a(t_stacks *stacks)
-{
-    t_node *current = stacks->stack_a;
-    while (current->index != -1) {
-        current = current->next;
-		free(current->prev);
-    }
-	free(current);
 }
 
 int main(int argc, char **argv)
@@ -64,6 +50,18 @@ int main(int argc, char **argv)
 		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
-	sorting(&stacks);
-	return (0);
+	// if (!is_sorted(&stacks))
+	// {
+	// 	ft_printf("alraedy sorted\n");
+	// 	free_stacks(&stacks);
+	// 	return (0);
+	// }
+	// print_stack_a(&stacks);
+	// push_b(&stacks);
+	// push_b(&stacks);
+	// push_b(&stacks);
+	// print_stack_b(&stacks);
+	// push_a(&stacks);
+	free_stacks(&stacks);
+	return (1);
 }

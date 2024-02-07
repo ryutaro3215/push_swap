@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 20:33:24 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/06 01:09:27 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/07 10:38:24 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,22 @@ int	make_stack_a(t_stacks *stacks, int index, char *arg_num)
 
 	if (!(new_stack = (t_node *)malloc(sizeof(t_node))))
 		return (0);
+	if (stacks->stack_a->index == -1)
+	{
+		new_stack->index = index;
+		new_stack->number = ft_atoi(arg_num);
+		new_stack->next = stacks->stack_a;
+		new_stack->prev = stacks->stack_a;
+		stacks->stack_a->next = new_stack;
+		stacks->stack_a->prev = new_stack;
+		stacks->stack_a = new_stack;
+		return (1);
+	}
 	new_stack->index = index;
 	new_stack->number = ft_atoi(arg_num);
 	new_stack->next = stacks->stack_a;
 	new_stack->prev = stacks->stack_a->prev;
+	stacks->stack_a->prev->next = new_stack;
 	stacks->stack_a->prev = new_stack;
 	stacks->stack_a = new_stack;
 	return (1);

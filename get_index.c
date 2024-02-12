@@ -1,25 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   get_index.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 11:27:09 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/12 00:20:22 by ryutaro3205      ###   ########.fr       */
+/*   Created: 2024/02/09 20:46:12 by ryutaro3205       #+#    #+#             */
+/*   Updated: 2024/02/09 20:55:10 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sort(t_stacks *stacks)
+int	get_max_index(t_node *stack)
 {
-	stacks->result_flag = 1;
-	if (stacks->stack_a_count == 2)
-		sort_two(stacks);
-	else if (stacks->stack_a_count <= 10)
-		sort_few(stacks);
-	else
-		sort_many(stacks);
-	return (1);
+	int	max;
+
+	max = stack->index;
+	while (stack->index != -1)
+	{
+		if (max < stack->index)
+			max = stack->index;
+		stack = stack->next;
+	}
+	return (max);
+}
+
+int	get_min_index(t_node *stack)
+{
+	int	min;
+
+	min = stack->index;
+	while (stack->index != -1)
+	{
+		if (min > stack->index)
+			min = stack->index;
+		stack = stack->next;
+	}
+	return (min);
 }

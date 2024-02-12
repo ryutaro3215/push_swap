@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:52:33 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/07 12:10:28 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/12 21:06:54 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,27 @@ int main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	if (!check_arg(&stacks, argc, argv))
-	{
-		ft_putstr_fd("Error\n", 2);
-		return (0);
-	}
-	if (!is_sorted(&stacks))
-	{
-		ft_printf("alraedy sorted\n");
-		free_stacks(&stacks);
-		return (0);
-	}
+		return (my_error(&stacks, 2, "Error\n"));
+	if (is_ascending(stacks.stack_a))
+		return (my_error(&stacks, 1, "already sorted\n"));
 	sort(&stacks);
+	if (stacks.result_flag == 0)
+		return (my_error(&stacks, 2, "Error\n"));
+	int	count = 0;
+	int	i = 0;
+	while (stacks.result_list[i] != '\0')
+	{
+		if (stacks.result_list[i] == '\n')
+			count++;
+		i++;
+	}
+	// ft_printf("%s", stacks.result_list);
+	print_stack(&stacks);
+	if (is_ascending(stacks.stack_a))
+		ft_printf("OK\n");
+	else
+		ft_printf("Fail\n");
+	ft_printf("count: %d\n", count);
 	free_stacks(&stacks);
 	return (0);
 }

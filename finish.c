@@ -6,11 +6,35 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:50:35 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/02 00:37:27 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/09 20:53:10 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	my_error(t_stacks *stacks, int er_num, char *str)
+{
+	if (er_num == 2)
+	{
+		if (stacks->collect_arg == 0)
+		{
+			ft_putstr_fd(str, 2);
+			return (1);
+		}
+		else
+		{
+			ft_putstr_fd(str, 2);
+			free_stacks(stacks);
+			return (1);
+		}
+	}
+	else
+	{
+		ft_printf(str);
+		free_stacks(stacks);
+		return (0);
+	}
+}
 
 void	free_stacks(t_stacks *stacks)
 {

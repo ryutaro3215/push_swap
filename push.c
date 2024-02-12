@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:09:38 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/07 12:09:31 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/09 20:01:07 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,10 @@ int push_a(t_stacks *stacks)
 	stacks->stack_b_count--;
 	stacks->stack_a_count++;
 	if (!keep_result(stacks, "pa\n"))
+	{
+		stacks->result_flag = 0;
 		return (0);
+	}
 	return (1);
 }
 
@@ -57,6 +60,9 @@ int push_b(t_stacks *stacks)
 	stacks->stack_a_count--;
 	stacks->stack_b_count++;
 	if (!keep_result(stacks, "pb\n"))
+	{
+		stacks->result_flag = 0;
 		return (0);
+	}
 	return (1);
 }

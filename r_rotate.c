@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:18:54 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/02 22:43:38 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/09 20:01:46 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int r_rotate_a(t_stacks *stacks)
 	second_last->next = top;
 	top->prev = second_last;
 	if (!keep_result(stacks, "rra\n"))
+	{
+		stacks->result_flag = 0;
 		return (0);
+	}
 	return (1);
 }
 
@@ -54,6 +57,21 @@ int r_rotate_b(t_stacks *stacks)
 	second_last->next = top;
 	top->prev = second_last;
 	if (!keep_result(stacks, "rrb\n"))
+	{
+		stacks->result_flag = 0;
 		return (0);
+	}
+	return (1);
+}
+
+int	r_rotate_rr(t_stacks *stacks)
+{
+	if (!r_rotate_a(stacks) || !r_rotate_b(stacks))
+		return (0);
+	if (!keep_result(stacks, "rrr\n"))
+	{
+		stacks->result_flag = 0;
+		return (0);
+	}
 	return (1);
 }

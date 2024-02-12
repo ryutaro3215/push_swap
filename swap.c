@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:09:47 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/07 10:48:40 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/09 20:05:11 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int swap_a(t_stacks *stacks)
 	stacks->stack_a->prev = tmp;
 	stacks->stack_a = tmp;
 	if (!keep_result(stacks, "sa\n"))
+	{
+		stacks->result_flag = 0;
 		return (0);
+	}
 	return (1);
 }
 
@@ -46,6 +49,21 @@ int swap_b(t_stacks *stacks)
 	stacks->stack_b->prev = tmp;
 	stacks->stack_b = tmp;
 	if (!keep_result(stacks, "sb\n"))
+	{
+		stacks->result_flag = 0;
 		return (0);
+	}
+	return (1);
+}
+
+int	swap_ss(t_stacks *stacks)
+{
+	if (!swap_a(stacks) || !swap_b(stacks))
+		return (0);
+	if (!keep_result(stacks, "ss\n"))
+	{
+		stacks->result_flag = 0;
+		return (0);
+	}
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:12:59 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/11 19:08:19 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/13 14:52:03 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,10 @@ int		sort_five(t_stacks *stacks);
 int		sort_more_five(t_stacks *stacks);
 int		sort_few(t_stacks *stacks);
 int		sort_many(t_stacks *stacks);
+int		judge_r_or_rr(t_node *stack, int max_index);
+int		judge_range(t_node *stack, int min_index, int max_index);
+void	about_sort(t_stacks *stacks, int quarter, int counter, int i);
+void	return_to_a(t_stacks *stacks, int max_index);
 // int	sort_many(t_stacks *stacks);
 /*get index*/
 int		get_max_index(t_node *stack);

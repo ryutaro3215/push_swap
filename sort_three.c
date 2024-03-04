@@ -6,7 +6,7 @@
 /*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:05:11 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/03/04 17:10:58 by rmatsuba         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:34:31 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	sort_three_a(t_stacks *stacks)
 	return (1);
 }
 
-int	sort_three_b(t_node *stacks)
+int	sort_three_b(t_stacks *stacks)
 {
 	if (stacks->stack_b->index < stacks->stack_b->next->index)
 	{

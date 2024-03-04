@@ -6,7 +6,7 @@
 /*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:52:33 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/03/04 17:03:52 by rmatsuba         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:33:21 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	print_stack_a(t_stacks *stacks)
 {
 	t_node	*current;
 
-	*current = stacks->stack_a;
+	current = stacks->stack_a;
 	ft_printf("stack_a:\n");
 	while (current->index != -1)
 	{
@@ -32,11 +32,11 @@ void	print_stack_a(t_stacks *stacks)
 	}
 }
 
-void	print_stack_a(t_stacks *stacks)
+void	print_stack_b(t_stacks *stacks)
 {
 	t_node	*current;
 
-	*current = stacks->stack_b;
+	current = stacks->stack_b;
 	ft_printf("stack_b:\n");
 	while (current->index != -1)
 	{

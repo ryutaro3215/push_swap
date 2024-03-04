@@ -6,7 +6,7 @@
 /*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 12:50:35 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/03/04 17:05:23 by rmatsuba         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:33:42 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	free_stack_b(t_stacks *stacks)
 
 void	free_stack_a(t_stacks *stacks)
 {
-	t_nod	*current;
+	t_node	*current;
 
 	current = stacks->stack_a;
 	while (current->index != -1)

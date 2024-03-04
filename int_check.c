@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   int_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:36:10 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/01/29 10:36:34 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 17:05:03 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int range_of_int(char *number)
+int	range_of_int(char *number)
 {
-	int i;
+	int		i;
 	long	l_number;
-	int sign;
+	int		sign;
 
 	i = 0;
 	sign = 1;
@@ -64,7 +64,7 @@ int	collect_number(char *number)
 
 int	is_number(char **arg_list)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!arg_list)

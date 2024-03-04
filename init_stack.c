@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 20:33:24 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/07 10:38:24 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 17:05:59 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	make_stack_a(t_stacks *stacks, int index, char *arg_num)
 {
 	t_node	*new_stack;
 
-	if (!(new_stack = (t_node *)malloc(sizeof(t_node))))
+	new_stack = (t_node *)malloc(sizeof(t_node));
+	if (!new_stack)
 		return (0);
 	if (stacks->stack_a->index == -1)
 	{
@@ -41,8 +42,8 @@ int	make_stack_a(t_stacks *stacks, int index, char *arg_num)
 
 int	get_index(char **arg_list, char *arg_num)
 {
-	int	index;
-	int	j;
+	int		index;
+	int		j;
 	char	*current_num;
 
 	index = 0;
@@ -59,8 +60,9 @@ int	get_index(char **arg_list, char *arg_num)
 
 int	malloc_stacks(t_stacks *stacks)
 {
-	if (!(stacks->stack_a = (t_node *)malloc(sizeof(t_node))) ||
-			!(stacks->stack_b = (t_node *)malloc(sizeof(t_node))))
+	stacks->stack_a = (t_node *)malloc(sizeof(t_node));
+	stacks->stack_b = (t_node *)malloc(sizeof(t_node));
+	if (!(stacks->stack_a) || !(stacks->stack_b))
 		return (0);
 	stacks->stack_a->index = -1;
 	stacks->stack_a->next = stacks->stack_a;
@@ -78,13 +80,15 @@ int	init_stack(t_stacks *stacks, char **arg_list)
 	count = stacks->arg_count;
 	stacks->stack_a_count = stacks->arg_count;
 	stacks->stack_b_count = 0;
-	if (!(stacks->result_list = (char *)malloc(sizeof(char) * 1)))
+	stacks->result_list = (char *)malloc(sizeof(char) * 1);
+	if (!(stacks->result_list))
 		return (0);
 	if (!malloc_stacks(stacks))
 		return (0);
 	while (count > 0)
 	{
-		if (!make_stack_a(stacks, get_index(arg_list,  arg_list[count - 1]), arg_list[count - 1]))
+		if (!make_stack_a(stacks, get_index(arg_list, arg_list[count - 1]),
+				arg_list[count - 1]))
 		{
 			free_stack_a(stacks);
 			return (0);

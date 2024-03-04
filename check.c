@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 22:51:01 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/09 20:39:00 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 16:50:05 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	is_duplicate(char **arg_list)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (arg_list[i] != NULL)
@@ -32,10 +32,10 @@ int	is_duplicate(char **arg_list)
 	return (1);
 }
 
-char **make_arg_list(t_stacks *stacks, int argc, char **argv)
+char	**make_arg_list(t_stacks *stacks, int argc, char **argv)
 {
-	char **arg_list;
-	int	i;
+	char	**arg_list;
+	int		i;
 
 	stacks->malloc_flag = 0;
 	if (argc == 2)
@@ -62,7 +62,7 @@ char **make_arg_list(t_stacks *stacks, int argc, char **argv)
 
 int	check_arg(t_stacks *stacks, int argc, char **argv)
 {
-	char **arg_list;
+	char	**arg_list;
 
 	arg_list = make_arg_list(stacks, argc, argv);
 	if (!arg_list)
@@ -72,5 +72,5 @@ int	check_arg(t_stacks *stacks, int argc, char **argv)
 	if (!init_stack(stacks, arg_list))
 		return (arg_free(arg_list, stacks, 0));
 	stacks->collect_arg = 1;
-	return(arg_free(arg_list, stacks, 1));
+	return (arg_free(arg_list, stacks, 1));
 }

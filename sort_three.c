@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 12:05:11 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/08 21:21:15 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 17:10:58 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	sort_three_a(t_stacks *stacks)
 		}
 	}
 	else if (stacks->stack_a->index > stacks->stack_a->next->index
-			&& stacks->stack_a->next->index < stacks->stack_a->next->next->index)
+		&& stacks->stack_a->next->index < stacks->stack_a->next->next->index)
 	{
 		if (stacks->stack_a->index < stacks->stack_a->next->next->index)
 			swap_a(stacks);
@@ -41,7 +41,7 @@ int	sort_three_a(t_stacks *stacks)
 	return (1);
 }
 
-int	sort_three_b(t_stacks *stacks)
+int	sort_three_b(t_node *stacks)
 {
 	if (stacks->stack_b->index < stacks->stack_b->next->index)
 	{
@@ -55,7 +55,7 @@ int	sort_three_b(t_stacks *stacks)
 		}
 	}
 	else if (stacks->stack_b->index > stacks->stack_b->next->index
-			&& stacks->stack_b->next->index < stacks->stack_b->next->next->index)
+		&& stacks->stack_b->next->index < stacks->stack_b->next->next->index)
 	{
 		if (stacks->stack_b->index < stacks->stack_b->next->next->index)
 			swap_b(stacks);

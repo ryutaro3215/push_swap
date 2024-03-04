@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_few.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 13:22:17 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/11 21:57:22 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 16:55:53 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	sort_five(t_stacks *stacks)
 	min_index = get_min_index(stacks->stack_a);
 	if (stacks->stack_a_count < 5)
 		return (0);
-	while (stacks->stack_a_count !=3)
+	while (stacks->stack_a_count != 3)
 	{
 		if (stacks->stack_a->index == min_index
 			|| stacks->stack_a->index == min_index + 1)

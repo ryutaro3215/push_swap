@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:09:38 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/09 20:01:07 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 17:04:27 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int push_a(t_stacks *stacks)
+int	push_a(t_stacks *stacks)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
 	if (stacks->stack_b_count == 0)
 		return (0);
@@ -39,11 +39,10 @@ int push_a(t_stacks *stacks)
 	return (1);
 }
 
-
-int push_b(t_stacks *stacks)
+int	push_b(t_stacks *stacks)
 {
-	t_node *first;
-	t_node *second;
+	t_node	*first;
+	t_node	*second;
 
 	if (stacks->stack_a_count == 0)
 		return (0);

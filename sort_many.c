@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_many.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 23:17:19 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/13 15:10:15 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 16:55:27 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	judge_range(t_node *stack, int min_index, int max_index)
 {
-	t_node *tmp;
-	t_node *tmp2;
-	int next;
-	int	prev;
+	t_node	*tmp;
+	t_node	*tmp2;
+	int		next;
+	int		prev;
 
 	tmp = stack;
 	tmp2 = stack;
@@ -41,10 +41,10 @@ int	judge_range(t_node *stack, int min_index, int max_index)
 
 int	judge_r_or_rr(t_node *stack, int max_index)
 {
-	t_node *tmp;
-	t_node *tmp2;
-	int next;
-	int	prev;
+	t_node	*tmp;
+	t_node	*tmp2;
+	int		next;
+	int		prev;
 
 	tmp = stack;
 	tmp2 = stack;
@@ -92,7 +92,8 @@ void	about_sort(t_stacks *stacks, int quarter, int counter, int i)
 {
 	while (stacks->stack_a->index != -1)
 	{
-		if (stacks->stack_a->index >= quarter * i && stacks->stack_a->index <= quarter * (i + 1) - 1)
+		if (stacks->stack_a->index >= quarter * i
+			&& stacks->stack_a->index <= quarter * (i + 1) - 1)
 		{
 			push_b(stacks);
 			counter++;
@@ -104,7 +105,8 @@ void	about_sort(t_stacks *stacks, int quarter, int counter, int i)
 		}
 		else
 		{
-			if (judge_range(stacks->stack_a, quarter * i, quarter * (i + 1) - 1) == 1)
+			if (judge_range(stacks->stack_a, quarter * i,
+					quarter * (i + 1) - 1) == 1)
 				rotate_a(stacks);
 			else
 				r_rotate_a(stacks);
@@ -115,7 +117,7 @@ void	about_sort(t_stacks *stacks, int quarter, int counter, int i)
 int	sort_many(t_stacks *stacks)
 {
 	int	quarter;
-	int counter;
+	int	counter;
 	int	max_index;
 	int	i;
 

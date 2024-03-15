@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:52:33 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/13 15:15:55 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/15 11:21:16 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,16 @@ int main(int argc, char **argv)
 	sort(&stacks);
 	if (stacks.result_flag == 0)
 		return (my_error(&stacks, 2, "Error\n"));
+	int	count = 0;
+	int	i = 0;
+	while (stacks.result_list[i] != '\0')
+	{
+		if (stacks.result_list[i] == '\n')
+			count++;
+		i++;
+	}
 	ft_printf("%s", stacks.result_list);
+	ft_printf("count: %d\n", count);
 	free_stacks(&stacks);
 	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:09:47 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/09 20:05:11 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/02/14 14:18:20 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int swap_a(t_stacks *stacks)
+int swap_a(t_stacks *stacks, int flag)
 {
 	t_node *tmp;
 
@@ -26,6 +26,8 @@ int swap_a(t_stacks *stacks)
 	tmp->next = stacks->stack_a;
 	stacks->stack_a->prev = tmp;
 	stacks->stack_a = tmp;
+	if (flag == 0)
+		return (1);
 	if (!keep_result(stacks, "sa\n"))
 	{
 		stacks->result_flag = 0;
@@ -34,7 +36,7 @@ int swap_a(t_stacks *stacks)
 	return (1);
 }
 
-int swap_b(t_stacks *stacks)
+int swap_b(t_stacks *stacks, int flag)
 {
 	t_node *tmp;
 
@@ -48,6 +50,8 @@ int swap_b(t_stacks *stacks)
 	tmp->next = stacks->stack_b;
 	stacks->stack_b->prev = tmp;
 	stacks->stack_b = tmp;
+	if (flag == 0)
+		return (1);
 	if (!keep_result(stacks, "sb\n"))
 	{
 		stacks->result_flag = 0;
@@ -58,7 +62,7 @@ int swap_b(t_stacks *stacks)
 
 int	swap_ss(t_stacks *stacks)
 {
-	if (!swap_a(stacks) || !swap_b(stacks))
+	if (!swap_a(stacks, 0) || !swap_b(stacks, 0))
 		return (0);
 	if (!keep_result(stacks, "ss\n"))
 	{

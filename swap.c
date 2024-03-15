@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:09:47 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/14 14:18:20 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 16:52:52 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int swap_a(t_stacks *stacks, int flag)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (stacks->stack_a_count < 2)
 		return (0);
@@ -38,7 +38,7 @@ int swap_a(t_stacks *stacks, int flag)
 
 int swap_b(t_stacks *stacks, int flag)
 {
-	t_node *tmp;
+	t_node	*tmp;
 
 	if (stacks->stack_b_count < 2)
 		return (0);

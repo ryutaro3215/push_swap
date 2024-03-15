@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
+/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 20:12:59 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/14 14:38:16 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/04 17:01:55 by rmatsuba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ typedef struct s_stacks
 
 /*check argument*/
 int		check_arg(t_stacks *stacks, int argc, char **argv);
-char 	**make_arg_list(t_stacks *stacks, int argc, char **argv);
+char	**make_arg_list(t_stacks *stacks, int argc, char **argv);
 int		is_number(char **arg_list);
-int 	range_of_int(char *number);
+int		range_of_int(char *number);
 int		collect_number(char *number);
 int		is_duplicate(char **arg_list);
 int		init_stack(t_stacks *stacks, char **arg_list);
@@ -90,9 +90,7 @@ int		get_min_index(t_node *stack);
 /*result*/
 int		keep_result(t_stacks *stacks, char *str);
 void	print_stack_a(t_stacks *stacks);
-void 	print_stack_b(t_stacks *stacks);
+void	print_stack_b(t_stacks *stacks);
 void	print_stack(t_stacks *stacks);
-
-
 
 #endif

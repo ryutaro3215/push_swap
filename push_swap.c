@@ -6,7 +6,7 @@
 /*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:52:33 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/02/15 11:21:16 by ryutaro3205      ###   ########.fr       */
+/*   Updated: 2024/03/15 23:41:27 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,34 @@ static void destructor() {
     system("leaks -q push_swap");
 }
 
-void print_stack_a(t_stacks *stacks)
+void	print_stack_a(t_stacks *stacks)
 {
-    t_node *current = stacks->stack_a;
+	t_node	*current;
+
+	current = stacks->stack_a;
 	ft_printf("stack_a:\n");
-    while (current->index != -1) {
-        ft_printf("index: %d\n", current->index);
+	while (current->index != -1)
+	{
+		ft_printf("index: %d\n", current->index);
 		ft_printf("number: %d\n", current->number);
 		ft_printf("\n");
-        current = current->next;
-    }
+		current = current->next;
+	}
 }
 
-void print_stack_b(t_stacks *stacks) {
-    t_node *current = stacks->stack_b;
+void	print_stack_b(t_stacks *stacks)
+{
+	t_node	*current;
+
+	current = stacks->stack_b;
 	ft_printf("stack_b:\n");
-    while (current->index != -1) {
-        ft_printf("index: %d\n", current->index);
+	while (current->index != -1)
+	{
+		ft_printf("index: %d\n", current->index);
 		ft_printf("number: %d\n", current->number);
 		ft_printf("\n");
-        current = current->next;
-    }
+		current = current->next;
+	}
 }
 
 void	print_stack(t_stacks *stacks)
@@ -46,7 +53,7 @@ void	print_stack(t_stacks *stacks)
 	print_stack_b(stacks);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_stacks	stacks;
 

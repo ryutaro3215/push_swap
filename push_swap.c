@@ -67,7 +67,16 @@ int	main(int argc, char **argv)
 	sort(&stacks);
 	if (stacks.result_flag == 0)
 		return (my_error(&stacks, 2, "Error\n"));
+	int	count = 0;
+	int	i = 0;
+	while (stacks.result_list[i] != '\0')
+	{
+		if (stacks.result_list[i] == '\n')
+			count++;
+		i++;
+	}
 	ft_printf("%s", stacks.result_list);
+	ft_printf("count: %d\n", count);
 	free_stacks(&stacks);
 	return (0);
 }

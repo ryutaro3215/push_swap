@@ -56,14 +56,16 @@ void	free_stack_a(t_stacks *stacks);
 void	free_stack_b(t_stacks *stacks);
 void	free_stacks(t_stacks *stacks);
 /*swap*/
-int		swap_a(t_stacks *stacks);
-int		swap_b(t_stacks *stacks);
+int		swap_a(t_stacks *stacks, int flag);
+int 	swap_b(t_stacks *stacks, int flag);
 /*rotate*/
-int		rotate_a(t_stacks *stacks);
-int		rotate_b(t_stacks *stacks);
+int		rotate_a(t_stacks *stacks, int flag);
+int 	rotate_b(t_stacks *stacks, int flag);
+int		rotate_rr(t_stacks *stacks);
 /*r_rotate*/
-int		r_rotate_a(t_stacks *stacks);
-int		r_rotate_b(t_stacks *stacks);
+int 	r_rotate_a(t_stacks *stacks, int flag);
+int 	r_rotate_b(t_stacks *stacks, int flag);
+int		r_rotate_rr(t_stacks *stacks);
 /*push*/
 int		push_a(t_stacks *stacks);
 int		push_b(t_stacks *stacks);

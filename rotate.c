@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	rotate_a(t_stacks *stacks)
+int rotate_a(t_stacks *stacks, int flag)
 {
 	t_node	*first;
 	t_node	*second;
@@ -30,6 +30,8 @@ int	rotate_a(t_stacks *stacks)
 	last->next = second;
 	last->prev = first;
 	stacks->stack_a = second;
+	if (flag == 0)
+		return (1);
 	if (!keep_result(stacks, "ra\n"))
 	{
 		stacks->result_flag = 0;
@@ -38,7 +40,7 @@ int	rotate_a(t_stacks *stacks)
 	return (1);
 }
 
-int	rotate_b(t_stacks *stacks)
+int rotate_b(t_stacks *stacks, int flag)
 {
 	t_node	*first;
 	t_node	*second;
@@ -56,6 +58,8 @@ int	rotate_b(t_stacks *stacks)
 	last->next = second;
 	last->prev = first;
 	stacks->stack_b = second;
+	if (flag == 0)
+		return (1);
 	if (!keep_result(stacks, "rb\n"))
 	{
 		stacks->result_flag = 0;
@@ -66,7 +70,7 @@ int	rotate_b(t_stacks *stacks)
 
 int	rotate_rr(t_stacks *stacks)
 {
-	if (!rotate_a(stacks) || !rotate_b(stacks))
+	if (!rotate_a(stacks, 0) || !rotate_b(stacks, 0))
 		return (0);
 	if (!keep_result(stacks, "rr\n"))
 	{

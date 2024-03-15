@@ -24,7 +24,7 @@ int	sort_four(t_stacks *stacks)
 		if (stacks->stack_a->index == min_index)
 			push_b(stacks);
 		else
-			rotate_a(stacks);
+			rotate_a(stacks, 1);
 	}
 	if (!is_ascending(stacks->stack_a))
 		sort_three_a(stacks);
@@ -46,12 +46,12 @@ int	sort_five(t_stacks *stacks)
 			|| stacks->stack_a->index == min_index + 1)
 			push_b(stacks);
 		else
-			rotate_a(stacks);
+			rotate_a(stacks, 1);
 	}
 	if (!is_ascending(stacks->stack_a))
 		sort_three_a(stacks);
 	if (is_ascending(stacks->stack_b))
-		swap_b(stacks);
+		swap_b(stacks, 1);
 	push_a(stacks);
 	push_a(stacks);
 	return (1);
@@ -70,7 +70,7 @@ int	sort_more_five(t_stacks *stacks)
 			i++;
 		}
 		else
-			rotate_a(stacks);
+			rotate_a(stacks, 1);
 	}
 	sort_five(stacks);
 	while (stacks->stack_b_count != 0)

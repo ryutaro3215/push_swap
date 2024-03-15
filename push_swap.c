@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmatsuba <rmatsuba@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*   By: ryutaro320515 <ryutaro320515@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:52:33 by ryutaro3205       #+#    #+#             */
-/*   Updated: 2024/03/04 17:33:21 by rmatsuba         ###   ########.fr       */
+/*   Updated: 2024/03/15 23:41:27 by ryutaro3205      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// __attribute__((destructor))
-// static void destructor() {
-//     system("leaks -q push_swap");
-// }
+__attribute__((destructor))
+static void destructor() {
+    system("leaks -q push_swap");
+}
 
 void	print_stack_a(t_stacks *stacks)
 {
